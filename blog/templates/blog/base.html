@@ -6,12 +6,20 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  <script type="text/javascript">
+    window.onload=function(){alert('Bienvenido a esta pagina');}
+    window.onunload=function(){alert('Vuelva en otro momento');}
+</script>
+
   <title>0VIBES</title>
 </head>
 <body>
   <div class="page-header">
-        <h1><a href="/">OVIBES</a></h1>
-    </div>
+  {% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+  {% endif %}
+    <h1><a href="/">OVIBES</a></h1>
+  </div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
@@ -20,5 +28,6 @@
             </div>
         </div>
     </div>
+  <footer>copryin right</footer>
 </body>
 </html>
